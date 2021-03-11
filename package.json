@@ -1,0 +1,11 @@
+{
+  "name": "referencescript",
+  "version": "0.0.1",
+  "description": "A superset of nodejs that adds support for pointers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'no tests available'"
+  },
+  "author": "Mahmud Ahmad (github: @mahmudzero, email: ahmad.mahmud1997@gmail.com)",
+  "license": "MIT"
+}
