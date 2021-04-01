@@ -1,3 +1,4 @@
+const util = require('util');
 /*
  * Pointers:
  *	- have a value, which points to somewhere in memory
@@ -25,7 +26,11 @@ Reference = function Reference(value) {
 		error_handling(`Cannot invoke 'new' on Reference!`, 1);
 	}
 	if (value) {
-		return { value: value }
+		const ret = {
+			value: value,
+			[util.inspect.custom]: (depth) => `Reference { ${value} }`
+		};
+		return ret;
 	}
 	delete this;
 	return null;
@@ -38,6 +43,7 @@ drf = function drf(reference) {
 		error_handling(`[1] ${Math.round(Math.random() * 1e4)} segmentation fault ${process.argv[2]}`, 139);
 	}
 }
+
 if (process.argv[2]) {
 	require(process.argv[2]);
 } else {
