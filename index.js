@@ -33,7 +33,7 @@ Reference = function Reference(value) {
 
 drf = function drf(reference) {
 	try {
-		reference.value;
+		return reference.value;
 	} catch(error) {
 		error_handling(`[1] ${Math.round(Math.random() * 1e4)} segmentation fault ${process.argv[2]}`, 139);
 	}
